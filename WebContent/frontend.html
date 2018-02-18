@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset='UTF-8'/>
+<title>Αρχική</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<h1>Καλωσορίσατε!</h1>
+
+<h2>Απόσυρση - Ανακύκλωση Αυτοκινήτων</h2>
+<p>Η εταιρεία μας δραστηριοποιείται στον κλάδο ανακύκλωσης παλαιών οχημάτων από το 2007,<br>
+εφαρμόζοντας σύγχρονες μεθόδους ανακύκλωσης με σεβασμό στο περιβάλλον και τον άνθρωπο. <br>
+Λειτουργεί συμβεβλημένη με τον μοναδικό στην Ελλάδα εγκεκριμένο και αδειοδοτημένο σύστημα <br>
+Εναλλακτικής Διαχείρισης Οχημάτων Ελλάδος (ΕΔΟΕ), τηρώντας τις ευρωπαϊκές περιβαλλοντικές οδηγίες και <br>
+τους κανόνες ασφαλείας.
+Στόχος μας είναι να αποτελούμε την πιο αξιόπιστη λύση για την ανακύκλωση του αυτοκινήτου σας,<br>
+ πάνω από όλα με σεβασμό στο περιβάλλον και τον άνθρωπο.
+</p>
+<h2>Τα καταστήματά μας!</h2>
+
+<table id="shops" border=1>
+<tr><th>ID</th><th>LON</th><th>LAT</th></tr>
+</table>
+<p>Αν θέλετε να κάνετε εγγραφή πατηστε <a href="signup.html">εδώ</a>.<p>
+<p>Αν θέλετε να κάνετε σύνδεση πατήστε <a href="login.html">εδώ</a>.</p>
+
+
+
+<script>
+var ajax= new XMLHttpRequest();
+var url = location.origin+"/Dist_Front/shops";
+ajax.open("GET",url,true);
+ajax.send(null);
+ajax.onreadystatechange = function() {
+	if (ajax.readyState == 4) {
+		if (ajax.status == 200) { 
+			if(ajax.response!=null){
+				var result = JSON.parse(ajax.response);
+				var table = document.getElementById("shops");
+				var shopList=result.shopList;
+				
+				for (var i=0;i<shopList.length;i++){
+					var tr = document.createElement("tr");
+			
+					var td1 = document.createElement("td");tr.appendChild(td1);
+					td1.innerHTML=shopList[i].id;
+					var td2 = document.createElement("td");tr.appendChild(td2);
+					td2.innerHTML=shopList[i].lon;
+					var td3 = document.createElement("td");tr.appendChild(td3);
+					td3.innerHTML=shopList[i].lat;
+
+					table.appendChild(tr);
+					
+				};
+			}
+		}
+	}
+}
+</script>
+</body>
+</html>
