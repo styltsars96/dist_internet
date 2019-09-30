@@ -14,9 +14,9 @@
 <tr><td>Αμάξι:</td>
 <tr><td>Μοντέλο:</td><td><input type="text" name="model"/></td></tr>
 <tr><td>Αρ. Κυκλοφορίας:</td><td><input type="text" name="plate"/></td></tr>
-<tr><td>Καύσιμο:</td><td>	<input type="radio" name="fuel" value="Gas"/>Αέριο
-							<input type="radio" name="fuel" value="Petrol"/>Πετρέλαιο
-							<input type="radio" name="fuel" value="Gasoline"/>Βενζίνη
+<tr><td>Καύσιμο:</td><td>	<input type="radio" name="fuel" value="Αέριο"/>Αέριο
+							<input type="radio" name="fuel" value="Πετρέλαιο"/>Πετρέλαιο
+							<input type="radio" name="fuel" value="Βενζίνη"/>Βενζίνη
 							</td></tr>
 <tr><td><input type="submit" value="Αποθήκευση!"/></td></tr>
 </table>

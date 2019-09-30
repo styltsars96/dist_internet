@@ -22,7 +22,6 @@
   </session-config>
   <context-param>
     <param-name>AppServer</param-name>
-    <!-- This is the URL of the APP SERVER TO Which it is connected to! -->
     <param-value>http://localhost:8080/Dist_Vol2/</param-value>
   </context-param>
 
